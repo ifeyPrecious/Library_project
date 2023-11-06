@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-brand h2 {
+  background: linear-gradient(crimson, black);
+  width: 170px;
+  color: white;
+}
+/* =================================sidebar================================ */
+#side-bar {
+  background-color: #f0f0f0;
+  padding: 20px;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.custom-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.custom-nav ul li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 15px 20px;
+}
+
+.custom-nav ul li a:hover {
+  background-color: crimson;
+}
+
+ul .dropdown-menu-light {
+  background-color: rgb(252, 244, 244);
+}
+/* ===============================main===================================== */
+#main-content {
+  margin-left: 270px;
+  padding: 20px;
+  width: calc(100vw - 250px);
+}
+
+#main-content .btn {
+  /* background-color: crimson ; */
+  padding: 4px;
+  border-radius: 5px;
+}
+#main-content a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ====================sidebar and main media query=============================== */
+@media (max-width: 850px) {
+  #side-bar {
+    width: 100%;
+    position: relative;
+    margin-left: 0;
+    height: auto;
+  }
+
+  #main-content {
+    margin-left: 0;
+    padding: 20px;
+    width: calc(100vw - 250px);
+  }
+}
+
+@media (max-width: 850px) {
+  #main-content {
+    width: 100%;
+  }
+  .admin {
+    text-align: center;
+  }
+}
+
+.main-row{
+  width: 80% !important;
+}
+
+/*========================== ADD BOOKS==================================== */
+body {
+  background: linear-gradient(to bottom, #ffebec, #ffe0f0); /* Gradient background */
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+}
+
+.container .row {
+  margin: 10px 0;
+}
+
+input.form-control {
+  border: 2px solid hotpink;
+  border-radius: 20px;
+  font-size: 18px;
+  color: #ff6e9c;
+  box-shadow: 1px 0px 4px 0px;
+  background-color: #f5e4ea;
+  height: 70px;
+}
+input.form-control:focus{
+  border: 2px solid crimson !important;
+  height: 80px;
+}
+
+/* ==============================login=================================== */
+
+/* =========================table==================================== */
+.cute-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  overflow-x: scroll;
+}
+
+.cute-table thead th {
+  background-color: crimson;  
+  color: #fff;  
+  font-weight: bold;
+  border: 1px solid pink; 
+}
+
+.cute-table tbody tr:nth-child(odd) {
+  background-color: #ffe4e1;  
+}
+
+.cute-table tbody tr:nth-child(even) {
+  background-color: pink;  
+}
+
+.cute-table td, .cute-table th {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid hotpink; 
+}
+ 
+
+/*================== pagination===================== */
+/* Style for the pagination container */
+.pagination {
+  display: inline-block;
+  margin: 20px 0;
+}
+
+/* Style for individual pagination links */
+.pagination a {
+  color: #ff69b4; /* Pink color */
+  padding: 10px 15px;
+  text-decoration: none;
+  background-color: crimson;
+  border: 1px solid #ff69b4;
+  border-radius: 4px;
+  margin: 2px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+/* Hover effect for pagination links */
+.pagination a:hover {
+  background-color: #ff69b4; /* Pink color */
+  color: #fff;
+}
+
+/* Style for the current page link */
+.pagination .active {
+  background-color: #ff69b4; /* Pink color */
+  color: #fff;
+  border: 1px solid #ff69b4;
+}
+
+/* Disable the previous and next links on first and last pages */
+.pagination .disabled {
+  pointer-events: none;
+  background-color: #ddd;
+  color: #aaa;
+}
