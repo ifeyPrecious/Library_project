@@ -70,6 +70,10 @@ ul .dropdown-menu-light {
     padding: 20px;
     width: calc(100vw - 250px);
   }
+  .details-image {
+    width: 200px;
+    box-shadow: 3px 2px 1px 0 #ff1493;
+  }
 }
 
 @media (max-width: 850px) {
@@ -81,14 +85,18 @@ ul .dropdown-menu-light {
   }
 }
 
-.main-row{
+.main-row {
   width: 80% !important;
 }
 
 /*========================== ADD BOOKS==================================== */
 body {
-  background: linear-gradient(to bottom, #ffebec, #ffe0f0); /* Gradient background */
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(
+    to bottom,
+    #ffebec,
+    #ffe0f0
+  ); /* Gradient background */
+  font-family: "Arial", sans-serif;
   padding: 20px;
 }
 
@@ -105,7 +113,7 @@ input.form-control {
   background-color: #f5e4ea;
   height: 70px;
 }
-input.form-control:focus{
+input.form-control:focus {
   border: 2px solid crimson !important;
   height: 80px;
 }
@@ -116,31 +124,31 @@ input.form-control:focus{
 .cute-table {
   border-collapse: collapse;
   width: 100%;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   overflow-x: scroll;
 }
 
 .cute-table thead th {
-  background-color: crimson;  
-  color: #fff;  
+  background-color: crimson;
+  color: #fff;
   font-weight: bold;
-  border: 1px solid pink; 
+  border: 1px solid pink;
 }
 
 .cute-table tbody tr:nth-child(odd) {
-  background-color: #ffe4e1;  
+  background-color: #ffe4e1;
 }
 
 .cute-table tbody tr:nth-child(even) {
-  background-color: pink;  
+  background-color: pink;
 }
 
-.cute-table td, .cute-table th {
+.cute-table td,
+.cute-table th {
   padding: 8px;
   text-align: left;
-  border: 1px solid hotpink; 
+  border: 1px solid hotpink;
 }
- 
 
 /*================== pagination===================== */
 /* Style for the pagination container */
@@ -180,4 +188,16 @@ input.form-control:focus{
   pointer-events: none;
   background-color: #ddd;
   color: #aaa;
+}
+ /* =================================Details==========================/ */
+.form-control-static {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 30px;
+  font-family: "Georgia", serif;
+  color: crimson;
+  width: 100%;
+  margin: 10px 0;
 }

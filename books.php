@@ -7,7 +7,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 }
 
 // Pagination settings
-$records_per_page = 10; // Number of records to display per page
+$records_per_page = 5; // Number of records to display per page
 
 if (isset($_GET['page']) && is_numeric($_GET['page'])) {
   $page = $_GET['page'];
@@ -46,6 +46,14 @@ $results = $stmt->get_result();
 
     <p class="text-center text-danger"> <?php echo $_GET['edit_error_message']  ?></p>
   <?php } ?>
+  
+  <?php if (isset($_GET['deleted_successfully'])) {  ?>
+            <p class="text-center text-success"><?php echo $_GET['deleted_successfully'];  ?></p>
+        <?php } ?>
+
+        <?php if (isset($_GET['failed_to_delete'])) {  ?>
+            <p class="text-center text-success"><?php echo $_GET['failed_to_delete'];  ?></p>
+        <?php } ?>
 
 
     </form>
@@ -58,8 +66,8 @@ $results = $stmt->get_result();
           <th scope="col">Author</th>
           <th scope="col">Image</th>
           <th scope="col">Edit Book</th>
-          <th scope="col">Edit Image</th>
           <th scope="col">Delete</th>
+          <th scope="col">Details</th>
         </tr>
       </thead>
       <tbody>
@@ -71,14 +79,40 @@ $results = $stmt->get_result();
             <td><?php echo $result['book_description']; ?></td>
             <td><?php echo $result['author']; ?></td>
             <td>
-              <img alt="images" src='./assects/imgs/<?php echo $result['image']; ?>' style='width: 70px; height: 70px;'>
+              <img alt="images" src='./assects/imgs/<?php echo $result['image']; ?>' style='width: 130px; height: 120px;'>
 
             </td>
 
             <td>
               <a class="btn btn-primary" href="edit_books.php?id=<?php echo $result['id']; ?>">Edit books</a> </span>
             </td>
+            
 
+            <!-- <td>
+        <a class="btn btn-danger" href="delete_books.php?id=<?php // echo $result['id']; ?>"
+>Delete book</a>
+    </td> -->
+
+    <td>
+    <a class="btn btn-danger" href="#" onclick="confirmDelete(<?php echo $result['id']; ?>)">Delete book</a>
+</td>
+
+<td>
+                        <form action="book_details.php" method="POST">
+                            <input type="hidden" value="<?php echo $result['id'];?>" name="book_id">
+                          
+                            <input class="btn btn-info" type="submit" name="book_btn" value="Details">
+                        </form>
+                    </td>
+
+
+
+
+
+  
+
+    <!--=================the script============= -->
+   
 
 
 
@@ -112,6 +146,7 @@ $results = $stmt->get_result();
   <div class="footer">
     &copy; <?php echo date('Y') ?>
   </div>
+  <script src="script.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

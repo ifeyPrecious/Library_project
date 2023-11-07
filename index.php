@@ -55,7 +55,7 @@
                 <div class="custom-card-body">
                     <h5 class="custom-card-title">Products</h5>
                     <p class="custom-card-text">Manage your products here.</p>
-                    <a href=" #" class=" btn">View Products</a>
+                    <a href=" #" class=" btn confirm-button">View Products</a>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                 <div class="custom-card-body">
                     <h5 class="custom-card-title">Orders</h5>
                     <p class="custom-card-text">View and manage customer orders.</p>
-                    <a href="#" class="btn  ">View Orders</a>
+                    <a href="#" class="btn confirm-button ">View Orders</a>
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@
                 <div class="custom-card-body">
                     <h5 class="custom-card-title">Account</h5>
                     <p class="custom-card-text">View your account</p>
-                    <a href="#" class="btn  ">View account</a>
+                    <a href="#" class="btn confirm-button ">View account</a>
                 </div>
             </div>
         </div>

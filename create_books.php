@@ -21,7 +21,7 @@ if (isset($_POST['create_book'])) {
     $stmt->bind_param('ssss', $book_title, $book_description, $author, $image_name1);
 
     if ($stmt->execute()) {
-        header('location:books.php?book_added=Book has been added successfully');
+        header('location:books.php?book_added=Your book has been added successfully');
     } else {
         header('location:books.php?book_failed=Error occurred, try again');
     }
