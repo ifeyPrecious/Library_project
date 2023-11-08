@@ -59,7 +59,7 @@ ul .dropdown-menu-light {
 /* ====================sidebar and main media query=============================== */
 @media (max-width: 850px) {
   #side-bar {
-    width: 100%;
+    width: 100% !important;
     position: relative;
     margin-left: 0;
     height: auto;

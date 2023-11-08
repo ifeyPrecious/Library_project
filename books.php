@@ -46,14 +46,22 @@ $results = $stmt->get_result();
 
     <p class="text-center text-danger"> <?php echo $_GET['edit_error_message']  ?></p>
   <?php } ?>
-  
-  <?php if (isset($_GET['deleted_successfully'])) {  ?>
-            <p class="text-center text-success"><?php echo $_GET['deleted_successfully'];  ?></p>
-        <?php } ?>
 
-        <?php if (isset($_GET['failed_to_delete'])) {  ?>
-            <p class="text-center text-success"><?php echo $_GET['failed_to_delete'];  ?></p>
-        <?php } ?>
+  <?php if (isset($_GET['deleted_successfully'])) {  ?>
+    <p class="text-center text-success"><?php echo $_GET['deleted_successfully'];  ?></p>
+  <?php } ?>
+
+  <?php if (isset($_GET['failed_to_delete'])) {  ?>
+    <p class="text-center text-success"><?php echo $_GET['failed_to_delete'];  ?></p>
+  <?php } ?>
+
+  <p class="text-center"><?php if (isset($_GET['images_updated'])) {  ?></p>
+  <p class="text-center text-success"><?php echo $_GET['images_updated']; ?></p>
+<?php } ?>
+
+<p class="text-center"><?php if (isset($_GET['images_failed'])) {  ?></p>
+<p class="text-center text-danger"><?php echo $_GET['images_failed']; ?></p>
+<?php } ?>
 
 
     </form>
@@ -68,6 +76,7 @@ $results = $stmt->get_result();
           <th scope="col">Edit Book</th>
           <th scope="col">Delete</th>
           <th scope="col">Details</th>
+          <th scope="col">Edit Image</th>
         </tr>
       </thead>
       <tbody>
@@ -86,33 +95,39 @@ $results = $stmt->get_result();
             <td>
               <a class="btn btn-primary" href="edit_books.php?id=<?php echo $result['id']; ?>">Edit books</a> </span>
             </td>
-            
+
 
             <!-- <td>
-        <a class="btn btn-danger" href="delete_books.php?id=<?php // echo $result['id']; ?>"
+        <a class="btn btn-danger" href="delete_books.php?id=<?php // echo $result['id']; 
+                                                            ?>"
 >Delete book</a>
     </td> -->
 
-    <td>
-    <a class="btn btn-danger" href="#" onclick="confirmDelete(<?php echo $result['id']; ?>)">Delete book</a>
-</td>
+            <td>
+              <a class="btn btn-danger" href="#" onclick="confirmDelete(<?php echo $result['id']; ?>)">Delete book</a>
+            </td>
 
-<td>
-                        <form action="book_details.php" method="POST">
-                            <input type="hidden" value="<?php echo $result['id'];?>" name="book_id">
-                          
-                            <input class="btn btn-info" type="submit" name="book_btn" value="Details">
-                        </form>
-                    </td>
+            <td>
+              <form action="book_details.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" value="<?php echo $result['id']; ?>" name="book_id">
 
-
+                <input class="btn btn-info" type="submit" name="book_btn" value="Details">
+              </form>
+            </td>
 
 
+            <td>
+              <a class="btn btn-success" href="edit_image.php?id=<?php echo $result['id']; ?>&book_title=<?php echo $result['book_title']; ?>">Edit image</a>
+            </td>
 
-  
 
-    <!--=================the script============= -->
-   
+
+
+
+
+
+            <!--=================the script============= -->
+
 
 
 
