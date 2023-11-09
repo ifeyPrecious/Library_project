@@ -32,6 +32,11 @@
             <p>Issued Books</p>
           </div>
         </div>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p><a href="copies.php">Book status</a> </p>
+          </div>
+        </div>
       </div>
       <div class="accordion-item">
         <h2 class="accordion-header">
