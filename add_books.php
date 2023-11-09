@@ -63,6 +63,11 @@ if (!isset($_SESSION['admin_logged_in'])) {
                 <input type="file" class="form-control " placeholder="image" aria-label="image" name="image">
             </div>
         </div>
+        <div class="row">
+        <div class="col-md-6 col-sm-12 my-2">
+                <input type="number" class="form-control " placeholder="no of copies" aria-label="" name="no_of_copies">
+            </div>
+        </div>
         <button type="submit" class="btn btn-primary" name="create_book">Submit</button>
     </form>
 </div>

@@ -9,85 +9,7 @@
   width: 170px;
   color: white;
 }
-/* =================================sidebar================================ */
-#side-bar {
-  background-color: #f0f0f0;
-  padding: 20px;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-}
-
-.custom-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-.custom-nav ul li a {
-  text-decoration: none;
-  color: black;
-  display: block;
-  padding: 15px 20px;
-}
-
-.custom-nav ul li a:hover {
-  background-color: crimson;
-}
-
-ul .dropdown-menu-light {
-  background-color: rgb(252, 244, 244);
-}
-/* ===============================main===================================== */
-#main-content {
-  margin-left: 270px;
-  padding: 20px;
-  width: calc(100vw - 250px);
-}
-
-#main-content .btn {
-  /* background-color: crimson ; */
-  padding: 4px;
-  border-radius: 5px;
-}
-#main-content a {
-  text-decoration: none;
-  color: white;
-}
-
-/* ====================sidebar and main media query=============================== */
-@media (max-width: 850px) {
-  #side-bar {
-    width: 100% !important;
-    position: relative;
-    margin-left: 0;
-    height: auto;
-  }
-
-  #main-content {
-    margin-left: 0;
-    padding: 20px;
-    width: calc(100vw - 250px);
-  }
-  .details-image {
-    width: 200px;
-    box-shadow: 3px 2px 1px 0 #ff1493;
-  }
-}
-
-@media (max-width: 850px) {
-  #main-content {
-    width: 100%;
-  }
-  .admin {
-    text-align: center;
-  }
-}
-
-.main-row {
-  width: 80% !important;
-}
+/* 
 
 /*========================== ADD BOOKS==================================== */
 body {
@@ -201,3 +123,97 @@ input.form-control:focus {
   width: 100%;
   margin: 10px 0;
 }
+
+  
+  @media (min-width: 850px) {
+    #side-bar {
+      width: 250px;
+      background-color: #ff80ab; 
+      color: #fff; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+   
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+    }
+
+    #main-content {
+      margin-left: 250px;
+      padding: 20px;
+      width: calc(100vw - 250px);
+    }
+  }
+
+ 
+  @media (max-width: 850px) {
+    #side-bar {
+      width: 100% !important;
+      position: relative;
+      margin-left: 0;
+      height: auto;
+    }
+
+    #main-content {
+      margin-left: 0;
+      width: 100%;  
+    }
+
+    .details-image {
+      width: 200px;
+      box-shadow: 3px 2px 1px 0 #ff1493;
+    }
+
+    .admin {
+      text-align: center;
+    }
+  }
+ 
+  #side-bar h2 {
+    font-size: 28px;
+  }
+ 
+  .accordion-button {
+    background-color: white;
+    color: crimson;  
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 15px;
+  }
+
+  
+  .accordion-button:hover {
+    background-color: #ff99c2; 
+  }
+
+ 
+  .accordion-body {
+    background-color: #fff; 
+    color: crimson;  
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px;
+  }
+  .accordion-body:hover{
+    background-color: pink;
+  }
+
+   
+  .accordion-body a {
+    color: crimson; 
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+   
+  .accordion-body a:hover {
+    color: #000;  
+  }
+  .confirm-button{
+   background-color: #ff1493;
+  }
+  .confirm-button:hover{
+    background-color:palevioletred ;
+  }

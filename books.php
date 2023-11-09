@@ -71,6 +71,7 @@ $results = $stmt->get_result();
           <th scope="col">Id</th>
           <th scope="col">Title</th>
           <th scope="col">Description</th>
+          <th scope="col">no of copies</th>
           <th scope="col">Author</th>
           <th scope="col">Image</th>
           <th scope="col">Edit Book</th>
@@ -86,6 +87,7 @@ $results = $stmt->get_result();
             <th scope='row'><?php echo $result['id']; ?></th>
             <td><?php echo $result['book_title']; ?></td>
             <td><?php echo $result['book_description']; ?></td>
+            <td><?php echo $result['no_copies']; ?></td>
             <td><?php echo $result['author']; ?></td>
             <td>
               <img alt="images" src='./assects/imgs/<?php echo $result['image']; ?>' style='width: 130px; height: 120px;'>
