@@ -18,7 +18,7 @@ $result = mysqli_query($conn, $sql);
           <th scope="col">no</th>
           <th scope="col">ISBN</th>
           <th scope="col">NO OF COPIES</th>
-          <th scope="col">Book ID</th>
+          <th scope="col">BOOK ID</th>
           <th scope="col">STATUS</th>
         </tr>
       </thead>
@@ -33,7 +33,14 @@ $result = mysqli_query($conn, $sql);
               <td><?php echo $row['isbn']; ?></td>
               <td><?php echo $row['no_copies']; ?></td>
               <td><?php echo $row['book_id'] ?></td>
-              <td><?php echo $row['status']; ?></td>
+              <td>
+              <form method="POST" action="issue_book.php">
+                    <input type="hidden" name="copy_id" value="<?php echo $row['book_id']; ?>">
+                    <input type="hidden" name="copy_id" value="<?php echo $row['isbn']; ?>">
+                    <button type="submit" name="issue_status" id="issue-status" class="btn btn-primary">Issue</button>
+                </form>
+              </td>
+            
             </tr>
         <?php
           }

@@ -46,7 +46,12 @@
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-            <p>Blah Blah</p>
+          <p><a href="user.php">View Users</a> </p>
+          </div>
+        </div>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+          <p><a href="add_user.php">Add new user</a> </p>
           </div>
         </div>
       </div>

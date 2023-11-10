@@ -16,9 +16,7 @@ if (isset($_GET['page']) && is_numeric($_GET['page'])) {
 }
 
 $start_from = ($page - 1) * $records_per_page;
-
-// Prepare and execute the SELECT query using a prepared statement
-// $sql = "SELECT id, book_title, book_description, author, image FROM books LIMIT ?, ?";
+ 
 $stmt = $conn->prepare("SELECT * FROM books LIMIT ?, ?");
 $stmt->bind_param("ii", $start_from, $records_per_page);
 $stmt->execute();
