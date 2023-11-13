@@ -80,6 +80,7 @@ if (isset($_POST['book_btn']) && isset($_POST['book_id'])) {
                 </div>
             </div>
         </div>
+        <a href="books.php" class="btn confirm-button my-3">Back</a> 
     </div>
 </body>
 

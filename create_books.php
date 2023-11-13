@@ -46,8 +46,8 @@ if (isset($_POST['create_book'])) {
             $isbn = 'ISBN-' . randomNumber($length);
 
             // Insert each copy with its ISBN into the "no_copies" table
-            $stmt = $conn->prepare("INSERT INTO copies (book_id, isbn) VALUES (?, ?)");
-            $stmt->bind_param('is', $book_id, $isbn);
+            $stmt = $conn->prepare("INSERT INTO copies (book_id,isbn,book_title, author) VALUES (?,?,?,?)");
+            $stmt->bind_param('isss', $book_id, $isbn,$book_title,$author,);
 
             if ($stmt->execute()) {
                 // Insertion was successful

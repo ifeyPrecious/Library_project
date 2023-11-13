@@ -1,7 +1,6 @@
 <?php
 include('header.php');
-
-$sql = "SELECT copies.*, copies.isbn, books.no_copies
+$sql = "SELECT copies.*, copies.isbn,copies.author,copies.book_title, books.no_copies
         FROM copies
         LEFT JOIN books ON books.id = copies.book_id";
 $result = mysqli_query($conn, $sql);
@@ -13,12 +12,15 @@ $result = mysqli_query($conn, $sql);
 
   <div id="main-content">
     <table class="cute-table">
+      <h2  class="text-center border-bottom">THE BOOK STATUS</h2>
       <thead>
         <tr>
           <th scope="col">no</th>
           <th scope="col">ISBN</th>
           <th scope="col">NO OF COPIES</th>
           <th scope="col">BOOK ID</th>
+          <th scope="col">AUTHOR</th>
+          <th scope="col">TITLE</th>
           <th scope="col">STATUS</th>
         </tr>
       </thead>
@@ -33,11 +35,18 @@ $result = mysqli_query($conn, $sql);
               <td><?php echo $row['isbn']; ?></td>
               <td><?php echo $row['no_copies']; ?></td>
               <td><?php echo $row['book_id'] ?></td>
+              <td><?php echo $row['author']; ?></td>
+              <td><?php echo $row['book_title']; ?></td>
               <td>
-              <form method="POST" action="issue_book.php">
-                    <input type="hidden" name="copy_id" value="<?php echo $row['book_id']; ?>">
-                    <input type="hidden" name="copy_id" value="<?php echo $row['isbn']; ?>">
-                    <button type="submit" name="issue_status" id="issue-status" class="btn btn-primary">Issue</button>
+              <form method="POST" action="issue_check_form.php">
+                
+              <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                    <input type="hidden" name="book_id" value="<?php echo $row['book_id']; ?>">
+                    <input type="hidden" name="isbn" value="<?php echo $row['isbn']; ?>">
+                    <input type="hidden" name="author" value="<?php echo $row['author']; ?>">
+                    <input type="hidden" name="book_title" value="<?php echo $row['book_title']; ?>">
+
+                    <button  type="submit" name="issue_status" id="issue-status" class="btn btn-primary">Issue</button> 
                 </form>
               </td>
             
@@ -48,6 +57,7 @@ $result = mysqli_query($conn, $sql);
         ?>
       </tbody>
     </table>
+    <a href="books.php" class="btn confirm-button my-3">Back</a> 
   </div>
 </body>
 

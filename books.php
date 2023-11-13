@@ -88,12 +88,12 @@ $results = $stmt->get_result();
             <td><?php echo $result['no_copies']; ?></td>
             <td><?php echo $result['author']; ?></td>
             <td>
-              <img alt="images" src='./assects/imgs/<?php echo $result['image']; ?>' style='width: 130px; height: 120px;'>
+              <img alt="images" src='./assects/imgs/<?php echo $result['image']; ?>' style='width: 100px; height: 100px;'>
 
             </td>
 
             <td>
-              <a class="btn btn-primary" href="edit_books.php?id=<?php echo $result['id']; ?>">Edit books</a> </span>
+              <a class="btn btn-primary" href="edit_books.php?id=<?php echo $result['id']; ?>">Edit</a> </span>
             </td>
 
 
@@ -104,7 +104,7 @@ $results = $stmt->get_result();
     </td> -->
 
             <td>
-              <a class="btn btn-danger" href="#" onclick="confirmDelete(<?php echo $result['id']; ?>)">Delete book</a>
+              <a class="btn btn-danger" href="#" onclick="confirmDelete(<?php echo $result['id']; ?>)">Delete</a>
             </td>
 
             <td>
@@ -117,7 +117,7 @@ $results = $stmt->get_result();
 
 
             <td>
-              <a class="btn btn-success" href="edit_image.php?id=<?php echo $result['id']; ?>&book_title=<?php echo $result['book_title']; ?>">Edit image</a>
+              <a class="btn btn-success" href="edit_image.php?id=<?php echo $result['id']; ?>&book_title=<?php echo $result['book_title']; ?>">Edit </a>
             </td>
 
 

@@ -13,15 +13,15 @@
 </form>
  <main id="main-content">
     <h1>Welcome to presh Lib</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed in nihil, natus recusandae similique qui accusantium quis eaque officiis cupiditate illo excepturi, reprehenderit odio tempora! Recusandae id totam sequi!</p>
+    <p></p>
 
     <div class="row my-4 py-2">
         <div class="col-md-4 admin">
             <div class="custom-card mb-4">
                 <div class="custom-card-body">
-                    <h5 class="custom-card-title">Products</h5>
-                    <p class="custom-card-text">Manage your products here.</p>
-                    <a href=" #" class=" btn confirm-button">View Products</a>
+                    <h5 class="custom-card-title">Books</h5>
+                    <p class="custom-card-text">See availabe books here.</p>
+                    <a href="books.php" class=" btn confirm-button">View Books</a>
                 </div>
             </div>
         </div>
@@ -29,9 +29,9 @@
         <div class="col-md-4 admin">
             <div class="custom-card mb-4">
                 <div class="custom-card-body">
-                    <h5 class="custom-card-title">Orders</h5>
-                    <p class="custom-card-text">View and manage customer orders.</p>
-                    <a href="#" class="btn confirm-button ">View Orders</a>
+                    <h5 class="custom-card-title">Members</h5>
+                    <p class="custom-card-text">View your Members here</p>
+                    <a href="user.php" class="btn confirm-button ">Members</a>
                 </div>
             </div>
         </div>
@@ -39,9 +39,9 @@
         <div class="col-md-4 admin">
             <div class="custom-card mb-4">
                 <div class="custom-card-body">
-                    <h5 class="custom-card-title">Account</h5>
-                    <p class="custom-card-text">View your account</p>
-                    <a href="#" class="btn confirm-button ">View account</a>
+                    <h5 class="custom-card-title">Available Copies</h5>
+                    <p class="custom-card-text">View your available copies here </p>
+                    <a href="copies.php" class="btn confirm-button ">Copies</a>
                 </div>
             </div>
         </div>

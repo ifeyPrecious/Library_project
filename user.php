@@ -34,6 +34,9 @@ $results = $stmt->get_result();
       <p class="text-center"><?php if (isset($_GET['user_added'])) {  ?></p>
       <p class="text-center text-success"><?php echo $_GET['user_added']; ?></p>
     <?php } ?>
+    <p class="text-center"><?php if (isset($_GET['book_issued'])) {  ?></p>
+      <p class="text-center text-success"><?php echo $_GET['book_issued']; ?></p>
+    <?php } ?>
     <p class="text-center"><?php if (isset($_GET['failed'])) {  ?></p>
     <p class="text-center text-danger"><?php echo $_GET['failed']; ?></p>
   <?php } ?>
@@ -44,6 +47,8 @@ $results = $stmt->get_result();
 
     </form>
     <table class="cute-table">
+
+    <h2 class="text-center border-bottom">MEMBERS</h2>
       <thead>
         <tr>
           <th scope="col">Member id</th>
@@ -51,7 +56,7 @@ $results = $stmt->get_result();
           <th scope="col">Email</th>
           <th scope="col">Address</th>
           <th scope="col">Gender</th>
-          <th scope="col">Image</th>
+          <!-- <th scope="col">Image</th> -->
           <th scope="col">Number</th>
         </tr>
       </thead>
@@ -64,10 +69,10 @@ $results = $stmt->get_result();
             <td><?php echo $result['user_email']; ?></td>
             <td><?php echo $result['user_address']; ?></td>
             <td><?php echo $result['user_gender']; ?></td>
-            <td>
-              <img alt="images" src='./assects/imgs/<?php echo $result['image']; ?>' style='width: 130px; height: 120px;'>
+            <!-- <td> -->
+              <!-- <img alt="images" src='./assects/imgs/<?php //echo $result['image']; ?>' style='width: 130px; height: 120px;'> -->
 
-            </td>
+            <!-- </td> -->
             <td><?php echo $result['user_number']; ?></td>
             
             <!-- <td>
