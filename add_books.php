@@ -8,26 +8,6 @@ if (!isset($_SESSION['admin_logged_in'])) {
     exit;
   }
   
-// if(isset($_POST['add_book'])) {
-//     // Sanitize and validate user inputs
-//     $title = mysqli_real_escape_string($conn, $_POST['title']);
-//     $description = mysqli_real_escape_string($conn, $_POST['description']);
-//     $author = mysqli_real_escape_string($conn, $_POST['author']); 
-//     $image = mysqli_real_escape_string($conn, $_POST['image']); 
-//      // $image2 = mysqli_real_escape_string($conn, $_POST['image2']); 
-
-
-// $stmt = $conn->prepare("INSERT INTO books (book_title,book_description,author,image) VALUES (?,?,?,?)");
-
-// $stmt->bind_param('ssss', $title,$description,$author,$image);
-
-// if ($stmt->execute()) {
-//     header('location:add_books.php?books_added=book has been added successfully');
-// } else {
-//     header('location:add_books?error=Error occurred, try again');
-// }
-
-// }
 ?>
  
 <body>

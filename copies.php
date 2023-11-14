@@ -1,11 +1,17 @@
 <?php
 include('header.php');
-$sql = "SELECT copies.*, copies.isbn,copies.author,copies.book_title, books.no_copies
-        FROM copies
-        LEFT JOIN books ON books.id = copies.book_id";
-$result = mysqli_query($conn, $sql);
+ $sql = "SELECT copies.*, copies.isbn,copies.author,copies.book_title, books.no_copies
+         FROM copies
+         LEFT JOIN books ON books.id = copies.book_id";
+ $result = mysqli_query($conn, $sql);
+
+
+
+ 
+
 
 ?>
+ 
 
 <body>
   <?php include('side_bar.php'); ?>

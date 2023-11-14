@@ -48,6 +48,18 @@ if (isset($_POST['create_book'])) {
             // Insert each copy with its ISBN into the "no_copies" table
             $stmt = $conn->prepare("INSERT INTO copies (book_id,isbn,book_title, author) VALUES (?,?,?,?)");
             $stmt->bind_param('isss', $book_id, $isbn,$book_title,$author,);
+              
+            
+      if (isset($_POST['edit_btn'])) {
+    $book_id = $_POST['book_id'];
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $author = $_POST['author'];
+
+    $stmt = $conn->prepare("UPDATE copies SET book_title = ?, book_description = ?, author = ? WHERE id = ?");
+
+      }
+            
 
             if ($stmt->execute()) {
                 // Insertion was successful
