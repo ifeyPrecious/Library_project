@@ -49,11 +49,11 @@
           </div>
         </div>
       </div>
-      <div class="daccordion-item">
+      <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button">
          <p> <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in']) { ?>
-        <li><a href="logout.php">Logout</a></li>
+        <a class="logout" href="logout.php">Logout</a>
     <?php } ?> </p>
           </button>
         </h2>

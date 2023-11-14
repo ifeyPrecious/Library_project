@@ -186,7 +186,7 @@ select {
     font-size: 28px;
   }
  
-  .accordion-button {
+ .accordion-button {
     background-color: white;
     color: crimson;  
     border: none;
@@ -194,14 +194,21 @@ select {
     text-transform: uppercase;
     padding: 10px 15px;
   }
-
+  a{
+    color: crimson;  
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    text-decoration: none;
+  }
   
   .accordion-button:hover {
     background-color: #ff99c2; 
   }
 
  
-  .accordion-body {
+  .accordion-body{
     background-color: #fff; 
     color: crimson;  
     border-radius: 5px;
@@ -229,3 +236,4 @@ select {
   .confirm-button:hover{
     background-color:palevioletred ;
   }
+  
