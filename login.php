@@ -2,7 +2,8 @@
 include('header.php');
 include('./server/connection.php');
 
-if (isset($_SESSION['admin_logged_in'])) {
+
+if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in']) {
     header('location:index.php');
     exit;
 }
@@ -10,15 +11,14 @@ if (isset($_SESSION['admin_logged_in'])) {
 if (isset($_POST['login-btn'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $name =$_POST['name'];
-
-    // Validate email format on the client-side (you can add more validation)
+    $name = $_POST['name'];
+ 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header('location: login.php?error=Invalid email format');
         exit();
     }
 
-    // Query the database
+  
     $stmt = $conn->prepare("SELECT admin_id, admin_name, admin_email, admin_password FROM admin WHERE admin_email = ? AND admin_name = ? LIMIT 1");
     $stmt->bind_param('ss', $email, $name);
 
@@ -28,8 +28,7 @@ if (isset($_POST['login-btn'])) {
 
         if ($stmt->num_rows == 1) {
             $stmt->fetch();
-
-            // Verify the password
+       
             if (password_verify($password, $admin_hashed_password)) {
                 $_SESSION['admin_id'] = $admin_id;
                 $_SESSION['admin_name'] = $admin_name;
@@ -47,7 +46,6 @@ if (isset($_POST['login-btn'])) {
             exit();
         }
     } else {
-        // Handle the database connection or query error here
         header('location: login.php?error=Something went wrong');
         exit();
     }

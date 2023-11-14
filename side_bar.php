@@ -52,7 +52,9 @@
       <div class="daccordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button">
-          <p><a href="logout.php">Logout.php</a> </p>
+         <p> <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in']) { ?>
+        <li><a href="logout.php">Logout</a></li>
+    <?php } ?> </p>
           </button>
         </h2>
       </div>
