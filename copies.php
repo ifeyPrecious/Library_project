@@ -11,6 +11,7 @@ $result = mysqli_query($conn, $sql);
   <?php include('side_bar.php'); ?>
 
   <div id="main-content">
+
     <table class="cute-table">
       <h2  class="text-center border-bottom">THE BOOK STATUS</h2>
       <thead>
@@ -38,6 +39,8 @@ $result = mysqli_query($conn, $sql);
               <td><?php echo $row['author']; ?></td>
               <td><?php echo $row['book_title']; ?></td>
               <td>
+
+              
               <form method="POST" action="issue_check_form.php">
                 
               <input type="hidden" name="id" value="<?php echo $row['id']; ?>">

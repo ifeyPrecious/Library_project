@@ -34,9 +34,7 @@ $results = $stmt->get_result();
       <p class="text-center"><?php if (isset($_GET['user_added'])) {  ?></p>
       <p class="text-center text-success"><?php echo $_GET['user_added']; ?></p>
     <?php } ?>
-    <p class="text-center"><?php if (isset($_GET['book_issued'])) {  ?></p>
-      <p class="text-center text-success"><?php echo $_GET['book_issued']; ?></p>
-    <?php } ?>
+  
     <p class="text-center"><?php if (isset($_GET['failed'])) {  ?></p>
     <p class="text-center text-danger"><?php echo $_GET['failed']; ?></p>
   <?php } ?>

@@ -1,12 +1,12 @@
 <?php
 include('header.php');
- 
+
+// Ensure that the user is logged in
 if (!isset($_SESSION['admin_logged_in'])) {
     header('location: login.php');
     exit;
 }
 
-// Check if the form for issuing the book is submitted
 if (isset($_POST['issue_status'])) {
     $book_id = $_POST['book_id'];
     $isbn = $_POST['isbn'];
@@ -35,7 +35,6 @@ if (isset($_POST['issue_book'])) {
     // Initialize member credentials
     $member_id = $_POST['member_id'];
     $password = $_POST['password'];
- 
 
     $stmt = $conn->prepare("SELECT user_password FROM users WHERE member_id = ? LIMIT 1");
     $stmt->bind_param('s', $member_id);
@@ -45,12 +44,17 @@ if (isset($_POST['issue_book'])) {
     $stmt->close();
 
     if ($hashed_password && password_verify($password, $hashed_password)) {
-        
-        $stmt_insert = $conn->prepare("INSERT INTO issued_books (member_id, book_title, isbn, author) VALUES (?, ?, ?, ?)");
-        $stmt_insert->bind_param('ssss', $member_id, $book_issue_info['book_title'], $book_issue_info['isbn'], $book_issue_info['author']);
+        $issued_date = date('Y-m-d H:i:s'); // Current date and time
+
+        $stmt_insert = $conn->prepare("INSERT INTO issued_books (member_id, book_title, isbn, author, date) VALUES (?, ?, ?, ?, ?)");
+        $stmt_insert->bind_param('sssss', $member_id, $book_issue_info['book_title'], $book_issue_info['isbn'], $book_issue_info['author'], $issued_date);
+
+        // After successfully inserting into the table
+      $_SESSION['action_completed'] = true;
+
 
         if ($stmt_insert->execute()) {
-           header('location:user.php?book_issued=Book Has Been Issued Sucessfully');
+            header('location:issued_books.php?book_issued=Book Has Been Issued Successfully');
         } else {
             echo "Error issuing book";
         }
@@ -66,6 +70,9 @@ if (isset($_POST['issue_book'])) {
     unset($_SESSION['book_issue_info']);
 }
 ?>
+
+ 
+
 
 
 
@@ -97,8 +104,7 @@ if (isset($_POST['issue_book'])) {
                 <input type="text" class="form-control" placeholder="email" aria-label="email" name="password">
             </div>
         </div>
-
-        <button type="submit" class="btn btn-primary" name="issue_book">issue</button> 
+        <button type="submit" class="btn btn-primary"  id="action" name="issue_book">issue</button> 
             <a href="user.php" class="btn confirm-button offset-5">Back</a> 
 
 
@@ -116,6 +122,18 @@ if (isset($_POST['issue_book'])) {
     <div class="footer">
         &copy; <?php echo date('Y') ?>
     </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        <?php
+        // Check if the action has been completed
+        if (isset($_SESSION['action_completed'])) {
+            echo 'document.getElementById("action").disabled = true;';
+        }
+        ?>
+    });
+</script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
